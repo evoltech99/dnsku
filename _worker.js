@@ -3,7 +3,7 @@ addEventListener('fetch', event => {
 });
 
 // Daftar domain yang dilarang (blacklist)
-const blacklist = ['https://xnxx.com', 'line.me'];
+const blacklist = ['xnxx.com', 'line.me'];
 
 async function handleRequest(request) {
   const { url } = request;
@@ -11,8 +11,10 @@ async function handleRequest(request) {
 
   // Cek apakah domain dalam blacklist
   if (blacklist.includes(hostname)) {
-    // Redirect ke contoh.com
-    return Response.redirect('https://facebook.com', 302);
+    // Return response with blocked message
+    return new Response('Domain ini diblokir.', {
+      status: 403
+    });
   }
 
   // Jika domain tidak dalam blacklist, lanjutkan dengan permintaan asli
