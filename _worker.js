@@ -1,3 +1,5 @@
+ @ts-ignore
+import { connect } from 'cloudflare:sockets';
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request));
 });
