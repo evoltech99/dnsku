@@ -1,0 +1,6 @@
+name = "dnsku"
+type = "javascript"
+account_id = "d262174f43d20e377b0e986658be2096ccff0"
+workers_dev = true
+route = ""
+zone_id = ""
